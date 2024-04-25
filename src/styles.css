@@ -1,0 +1,115 @@
+body {
+    font-family: Helvetics, sans-serif;
+}
+
+#container {
+    display: flex;
+}
+
+#map { 
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 2%;
+    z-index: 99;
+    background-color: white;
+    height: 500px;
+    overflow-y: scroll;
+    border-radius: 15px;
+    border: 2px solid grey;
+}
+
+.toggler {
+    display: flex;
+}
+
+.toggler-checkbox {
+    margin-right: 10px;
+}
+
+.green-dot {
+    width: 8px;
+    height: 8px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.blue-dot {
+    width: 8px;
+    height: 8px;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+.orange-dot {
+    width: 8px;
+    height: 8px;
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.red-dot {
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.black-dot {
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+
+.toggler {
+    color: white;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+}
+
+#food-types, #price-types {
+    width: 100%;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box div {
+    display: flex;
+    flex-direction: row;
+}
+
+.price {
+    border-radius: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+}
+
+#signature {
+    font-size: 10px;
+    color: grey;
+    font-weight: bold;
+}
+
+#title h2 {
+    margin-top: 0;
+}

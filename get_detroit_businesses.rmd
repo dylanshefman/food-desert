@@ -1,0 +1,23 @@
+library(sf)
+library(tidyverse)
+
+# read in data
+detroit_shp <- st_read("detroit_boundary.shp")
+businesses <- read.csv("businesses.csv")
+detroit_shp <- st_read("detroit_boundary.shx")
+businesses_sf <- st_as_sf(businesses, coords = c("longitude", "latitude"), crs = st_crs(detroit_shp))
+st_crs(businesses_sf) <- st_crs(detroit_shp)
+
+# store Detroit businesses only (unique)
+detroit_businesses <- st_intersection(businesses_sf, detroit_boundary) %>%
+  distinct(id, .keep_all = TRUE)
+ 
+# remove extra commas in category names that hinder csv processing 
+detroit_businesses$categories <- gsub(" ,|,", "/", detroit_businesses$categories)
+
+# return to separate latitude/longitude columns
+detroit_businesses <- cbind(detroit_businesses, st_coordinates(detroit_businesses))
+
+
+write.csv(detroit_businesses, "detroit_businesses.csv", row.names = FALSE)
+

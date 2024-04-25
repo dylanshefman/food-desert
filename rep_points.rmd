@@ -1,0 +1,12 @@
+library(sf)
+
+detroit_shp <- st_read("detroit_boundary.shp")
+
+# generate 60 uniformly spaced points within detroit_shp
+rep_points <- st_sample(detroit_shp, 60, type="regular")[1:60]
+
+lat_lon <- st_coordinates(rep_points)
+lat_lon_df <- data.frame(lat = lat_lon[, "Y"],
+                         lon = lat_lon[, "X"])
+
+write.csv(lat_lon_df, "rep_points.csv", row.names = FALSE)
