@@ -20,7 +20,7 @@ L.control.compass().addTo(map);
 L.control.scale().addTo(map);
 
 // add Detroit boundary
-var url = '../detroit_boundary.geojson';
+var url = 'detroit_boundary.geojson';
 fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -103,7 +103,7 @@ function loadCSV(url) {
 }
 
 // Load CSV file
-loadCSV('../detroit_businesses.csv');
+loadCSV('detroit_businesses.csv');
 
 locations = [
     groceryStores,
