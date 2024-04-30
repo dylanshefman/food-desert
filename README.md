@@ -12,5 +12,5 @@ OUTPUT: businesses.csv
 Using the shapefile of Detroit, generate a list of all businesses within city limits.
 OUTPUT: detroit_businesses.csv
 
-4. src/index.html, src/styles.css, src/script.js
+4. index.html, styles.css, script.js
 Using detroit_businesses.csv, implement the webpage.
